@@ -1,0 +1,26 @@
+{
+  "name": "overrides",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.7.1",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-test-renderer": "^16.8.6"
+  },
+  "scripts": {
+    "build": "babel src -d .",
+    "build:watch": "yarn build --watch",
+    "test": "jest",
+    "test:watch": "yarn test --watch --notify",
+    "format": "prettier --write src/*",
+    "prepublishOnly": "yarn test && yarn build"
+  }
+}

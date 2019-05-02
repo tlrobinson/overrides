@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withOverrides should render with component overrides 1`] = `
+<div
+  style={Object {}}
+>
+  Baz
+</div>
+`;
+
+exports[`withOverrides should render with props overrides 1`] = `
+<div
+  className="Bar"
+  style={Object {}}
+>
+  Bar
+</div>
+`;
+
+exports[`withOverrides should render with style overrides 1`] = `
+<div
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Bar
+</div>
+`;
+
+exports[`withOverrides should render without overrides 1`] = `
+<div
+  style={Object {}}
+>
+  Bar
+</div>
+`;
