@@ -6,25 +6,31 @@ The hook and higher-order component provided by this library avoids manual destr
 
 Instead of having to destructure the component and props separately, then remembering to spread the props on the component:
 
-    const Foo = ({ overrides }) => {
-      const { Bar: { component: Bar, props: barProps}, } = getComponents(defaultComponents, overrides);
-      return <Bar message="hello" {...barProps} />;
-    };
+```javascript
+const Foo = ({ overrides }) => {
+  const { Bar: { component: Bar, props: barProps} } = getComponents(defaultComponents, overrides);
+  return <Bar message="hello" {...barProps} />;
+};
+```
 
 You simply apply the Higher-Order Component and get the wrapped component out of the props:
 
-    const Foo = withOverrides(defaultComponents)(
-      ({ Bar }) => {
-        return <Bar message="hello" />
-      }
-    );
+```javascript
+const Foo = withOverrides(defaultComponents)(
+  ({ Bar }) => {
+    return <Bar message="hello" />
+  }
+);
+```
 
 or use the Hook:
 
-    const Foo = ({ overrides }) => {
-      const { Bar } = useOverrides(defaultComponents, overrides);
-      return <Bar message="hello" />;
-    };
+```javascript
+const Foo = ({ overrides }) => {
+  const { Bar } = useOverrides(defaultComponents, overrides);
+  return <Bar message="hello" />;
+};
+```
 
 ## Why Overrides?
 
@@ -48,53 +54,60 @@ The [example implementation described in the above linked article](https://gist.
 
 ## Examples
 
-    import { withOverrides, useOverrides } from "overrides"
-    // or...
-    import withOverrides from "overrides/with"
-    import useOverrides from "overrides/use"
+Writing overridable components:
 
-    const defaultComponents = {
-      Bar: ({ style, message }) =>
-        <div style={style}>{message}</div>
-    };
+```javascript
+import { withOverrides, useOverrides } from "overrides"
+// or...
+import withOverrides from "overrides/with"
+import useOverrides from "overrides/use"
 
-    // Hook:
-    const Foo = ({ overrides, ...props }) => {
-      const { Bar } = useOverrides(defaultComponents, overrides);
-      return <Bar message="hello" />;
-    };
+const defaultComponents = {
+  Bar: ({ style, message }) =>
+    <div style={style}>{message}</div>
+};
 
-    // Higher-Order Component:
-    const Foo = withOverrides(defaultComponents)(
-      ({ Bar }) =>
-        <Bar message="hello" />
-    );
+// Hook:
+const Foo = ({ overrides, ...props }) => {
+  const { Bar } = useOverrides(defaultComponents, overrides);
+  return <Bar message="hello" />;
+};
 
-    // Higher-Order Component on class component with decorator:
-    @withOverrides(defaultComponents)
-    class Foo extends React.Component {
-      render() {
-        const { Bar } = this.props;
-        return <Bar message="hello" />;
-      }
-    }
+// Higher-Order Component:
+const Foo = withOverrides(defaultComponents)(
+  ({ Bar }) =>
+    <Bar message="hello" />
+);
 
-    // Usage:
+// Higher-Order Component on class component with decorator:
+@withOverrides(defaultComponents)
+class Foo extends React.Component {
+  render() {
+    const { Bar } = this.props;
+    return <Bar message="hello" />;
+  }
+}
+```
 
-    // component override:
-    <Foo overrides={{ Bar: { component: CustomBar } }} />
+Using overrides:
 
-    // component override shortcut:
-    <Foo overrides={{ Bar: CustomBar }} />
 
-    // style override:
-    <Foo overrides={{ Bar: { style: { color: "red" } } }} />
+```javascript
+// component override:
+<Foo overrides={{ Bar: { component: CustomBar } }} />
 
-    // style override with function:
-    <Foo overrides={{ Bar: { style: ({ isOpen }) => ({ color: isOpen ? "green" : "red" }) } }} />
+// component override shortcut:
+<Foo overrides={{ Bar: CustomBar }} />
 
-    // prop override:
-    <Foo overrides={{ Bar: { props: { message: "goodbye" } } }} />
+// style override:
+<Foo overrides={{ Bar: { style: { color: "red" } } }} />
 
-    // nested overrides:
-    <Foo overrides={{ Bar: { Baz: { props: { message: "goodbye" } } } }} />
+// style override with function:
+<Foo overrides={{ Bar: { style: ({ isOpen }) => ({ color: isOpen ? "green" : "red" }) } }} />
+
+// prop override:
+<Foo overrides={{ Bar: { props: { message: "goodbye" } } }} />
+
+// nested overrides:
+<Foo overrides={{ Bar: { Baz: { props: { message: "goodbye" } } } }} />
+```
