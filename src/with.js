@@ -1,5 +1,5 @@
 const React = require("react");
-const { initializeOverrideWrappers } = require("./utils");
+const { initializeOverrideWrappers } = require("./core");
 
 function withOverrides(defaultComponents) {
   return ComposedComponent =>
@@ -11,7 +11,7 @@ function withOverrides(defaultComponents) {
         super(props);
         this.components = initializeOverrideWrappers(
           defaultComponents,
-          () => this.props
+          () => this.props.overrides
         );
       }
 

@@ -1,11 +1,12 @@
 const React = require("react");
-const { initializeOverrideWrappers } = require("./utils");
+const { initializeOverrideWrappers } = require("./core");
 
-function useOverrides(props, defaultComponents) {
-  const propsRef = React.useRef(props);
-  propsRef.current = props;
+function useOverrides(defaultComponents, overrides) {
+  const overridesRef = React.useRef(overrides);
+  overridesRef.current = overrides;
   return React.useMemo(
-    () => initializeOverrideWrappers(defaultComponents, () => propsRef.current),
+    () =>
+      initializeOverrideWrappers(defaultComponents, () => overridesRef.current),
     [defaultComponents]
   );
 }

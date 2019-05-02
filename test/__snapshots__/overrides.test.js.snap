@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useOverrides should render with automatically nested overrides 1`] = `
+<div>
+  <div>
+    Baz
+  </div>
+</div>
+`;
+
+exports[`useOverrides should render with explicit component overrides 1`] = `
+<div>
+  Baz
+</div>
+`;
+
+exports[`useOverrides should render with manually nested overrides 1`] = `
+<div>
+  <div>
+    Baz
+  </div>
+</div>
+`;
+
+exports[`useOverrides should render with props overrides 1`] = `
+<div
+  className="Bar"
+>
+  Bar
+</div>
+`;
+
+exports[`useOverrides should render with shorthand component overrides 1`] = `
+<div>
+  Baz
+</div>
+`;
+
+exports[`useOverrides should render with style overrides 1`] = `
+<div
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Bar
+</div>
+`;
+
+exports[`useOverrides should render without overrides 1`] = `
+<div>
+  Bar
+</div>
+`;
+
+exports[`withOverrides should render with automatically nested overrides 1`] = `
+<div>
+  <div>
+    Baz
+  </div>
+</div>
+`;
+
+exports[`withOverrides should render with explicit component overrides 1`] = `
+<div>
+  Baz
+</div>
+`;
+
+exports[`withOverrides should render with manually nested overrides 1`] = `
+<div>
+  <div>
+    Baz
+  </div>
+</div>
+`;
+
+exports[`withOverrides should render with props overrides 1`] = `
+<div
+  className="Bar"
+>
+  Bar
+</div>
+`;
+
+exports[`withOverrides should render with shorthand component overrides 1`] = `
+<div>
+  Baz
+</div>
+`;
+
+exports[`withOverrides should render with style overrides 1`] = `
+<div
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Bar
+</div>
+`;
+
+exports[`withOverrides should render without overrides 1`] = `
+<div>
+  Bar
+</div>
+`;
