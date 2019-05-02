@@ -27,6 +27,6 @@ This project provides a React "higher-order component" and a React "hook" that i
     );
 
     // Usage:
-    <Foo overrides={{ Bar: { component: CustomBar }}} />
-    <Foo overrides={{ Bar: { style: { color: red } }}} />
-    <Foo overrides={{ Bar: { props: { message: "goodbye" } }}} />
+    <Foo overrides={{ Bar: { component: CustomBar } }} />
+    <Foo overrides={{ Bar: { style: { color: "red" } } }} />
+    <Foo overrides={{ Bar: { props: { message: "goodbye" } } }} />
