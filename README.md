@@ -1,6 +1,6 @@
 # Overrides for React
 
-This project provides a [React "Higher-Order Component"](https://reactjs.org/docs/higher-order-components.html) and a [React "Hook"](https://reactjs.org/docs/hooks-intro.html) that implemenets the "overrides" pattern described in this article https://medium.com/@dschnr/better-reusable-react-components-with-the-overrides-pattern-9eca2339f646 and used throughout the [Base Web](https://baseweb.design/theming/understanding-overrides/) component library.
+This project provides a [React "Higher-Order Component"](https://reactjs.org/docs/higher-order-components.html) and a [React "Hook"](https://reactjs.org/docs/hooks-intro.html) that implemenets the "overrides" pattern described in this article https://medium.com/@dschnr/better-reusable-react-components-with-the-overrides-pattern-9eca2339f646 and used throughout the [Base Web](https://baseweb.design/theming/understanding-overrides/) component library. The Hook and Higher-Order Component avoids manual prop spreading required when using `getOverrides`/`getComponents` directly (but we also expose our version of `getOverrides`/`getComponents` if you want to use them)
 
 ## Why Overrides?
 
@@ -8,7 +8,7 @@ Overrides can be thought of as "render props on steriods". Instead of adding a r
 
 ## Why the `overrides` library?
 
-The [example implementation described in the above article](https://gist.github.com/schnerd/30c1415b7621d0e71352aa0c0184f175#file-overrides-example-internal-js) requires a fair amount of manual object destructuring and prop spreading. This work can be encapsulated in a Hook or Higher-Order Component, which is what this library does.
+The [example implementation described in the above article](https://gist.github.com/schnerd/30c1415b7621d0e71352aa0c0184f175#file-overrides-example-internal-js) and the implementation in Base Web requires a fair amount of manual object destructuring and prop spreading. This work can be encapsulated in a Hook or Higher-Order Component, which is what this library does.
 
 [`react-overrides`](https://github.com/ilyalesik/react-overrides) is another project that implements this pattern, but it requires a custom Babel plugin.
 
@@ -20,6 +20,7 @@ The [example implementation described in the above article](https://gist.github.
 - `component` overrides: `{ Name: { component: Replacement } }`
 - `component` override shorthand: `{ Name: Replacement }`
 - nested overrides: `{ Name: { SubName: { SubReplacement } }`, `{ Name: { SubName: { style: { color: "red" } } }`, etc
+- `getOverrides` and `getComponents` can also be used directly
 
 ## Examples
 
