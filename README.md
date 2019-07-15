@@ -1,6 +1,6 @@
 # Overrides for React
 
-This project provides a React ["higher-order component"](https://reactjs.org/docs/higher-order-components.html) and ["hook"](https://reactjs.org/docs/hooks-intro.html) that implemenets the ["overrides"](https://medium.com/@dschnr/better-reusable-react-components-with-the-overrides-pattern-9eca2339f646) pattern to allow consumers of a component library to override style, props, and components inside a component. This pattern is used throughout Uber's [Base Web](https://baseweb.design/theming/understanding-overrides/) component library.
+This project provides a React [higher-order component](https://reactjs.org/docs/higher-order-components.html) and [hook](https://reactjs.org/docs/hooks-intro.html) that implemenets the [overrides](https://medium.com/@dschnr/better-reusable-react-components-with-the-overrides-pattern-9eca2339f646) pattern to allow consumers of a component library to override style, props, and components inside a component. This pattern is used throughout Uber's [Base Web](https://baseweb.design/theming/understanding-overrides/) component library.
 
 The hook and higher-order component provided by this library avoids manual destructuring and prop spreading required when using `getOverrides`/`getComponents` directly (but we also expose our version of `getOverrides`/`getComponents` if you want to use them)
 
