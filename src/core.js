@@ -9,11 +9,9 @@ exports.initializeOverrideWrappers = function initializeOverrideWrappers(
   for (const name of Object.keys(defaultComponents)) {
     components[name] = props => {
       const overrides = getOverridesProp() || {};
-      const override = overrides[name];
-
       const [Component, mergedProps] = getOverrides(
         overrides[name],
-        defaultComponents[name],
+        defaultComponents[name].bind(components),
         props
       );
 
